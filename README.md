@@ -94,3 +94,45 @@ console.log(double(4));      // 8
 
 ```
 
+### Questions-3:
+Difference of `this` keyword inside  Arrow Function & Normal Function
+
+###### Answer :
+| Aspect                  | Arrow Functions                 | Normal Functions                 |
+|-------------------------|---------------------------------|---------------------------------|
+| **Binding Behavior**    | Lexical (captures surrounding `this`) | Dynamic (context-dependent)    |
+| **`this` Value**        | Inherited from the parent context | Depends on how it's called     |
+| **Explicit Binding**    | No                              | Yes (e.g., `bind`, `call`, `apply`) |
+| **Usage**               | Common in callbacks, event handlers, higher-order functions | Versatile, used in various scenarios |
+| **Example**             | See below example               | See below example               |
+
+**Arrow Function Example:**
+
+```javascript
+const obj = {
+  name: 'John',
+  sayHello: () => {
+    console.log(`Hello, ${this.name}`); // `this` refers to the global object (e.g., `window` in a browser)
+  },
+};
+
+obj.sayHello(); // Outputs "Hello, undefined"
+```
+
+**normal Function Example:**
+
+```javascript
+function greet() {
+  console.log(`Hello, ${this.name}`);
+}
+
+const person = {
+  name: 'Alice',
+};
+
+const greetPerson = greet.bind(person);
+greetPerson(); // Outputs "Hello, Alice"
+
+```
+
+
