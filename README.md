@@ -6,7 +6,7 @@ Welcome to the JavaScript and MERN Interview Questions Repository. This GitHub p
 ## Questions
 
 
-#### Questions-1: 
+### Questions-1: 
 What are the key differences between var, let, and const when declaring variables in JavaScript, and when would you use each of them?
 
 #### Answer : 
@@ -43,6 +43,53 @@ function exampleConst() {
   }
   console.log(z); // Throws ReferenceError: z is not defined
 }
+
+
+```
+
+### Questions-2:
+Difference between Arrow Function & Normal Function
+
+###### Answer :
+
+| Aspect                           | Arrow Functions                     | Normal Functions               |
+|----------------------------------|-------------------------------------|-------------------------------|
+| Syntax                           | `(params) => expression`            | `function name(params) {...}` |
+| `this` Binding                   | Lexical (bound to enclosing scope)  | Dynamic (depends on caller)   |
+| Arguments Object                 | No                                  | Yes (available)               |
+| `arguments` Variable             | No                                  | Yes (available)               |
+| Constructor Function             | No                                  | Yes (can be used)             |
+| Use in Methods                   | Not suitable for object methods     | Suitable for object methods   |
+| Use in Callbacks                 | Concise and readable                | Commonly used                  |
+| Clarity and Conciseness          | Concise and often more readable     | May be verbose                |
+| Best for                        | Short, simple functions             | Complex functions or methods  |
+
+#### Arrow Functions Example
+
+```javascript
+const add = (a, b) => a + b;
+const double = (n) => n * 2;
+
+// Usage
+console.log(add(2, 3));      // 5
+console.log(double(4));      // 8
+
+```
+
+#### Normal Functions Example
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+function double(n) {
+  return n * 2;
+}
+
+// Usage
+console.log(add(2, 3));      // 5
+console.log(double(4));      // 8
 
 
 ```
